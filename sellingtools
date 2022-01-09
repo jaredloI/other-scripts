@@ -1,3 +1,12 @@
+if getgenv().extlaws == true then
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Extlaw$ - DHC";
+		Text = "Already Loaded";
+	})
+	return
+end
+getgenv().extlaws = true
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/i-reddd/other-scripts/main/chatspy'))()
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/i-reddd/other-scripts/main/uilib"))()
